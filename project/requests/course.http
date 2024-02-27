@@ -1,0 +1,28 @@
+post http://localhost:3000/course
+content-type: application/json
+{
+    "name": "Node.js",
+    "author": "Mosh",
+    "tags": ["node", "backend"],
+    "isPublished": true
+}
+
+###
+put http://localhost:3000/course/1
+content-type: application/json
+{
+    "name": "Node.js",
+    "author": "Mosh",
+    "tags": ["node", "backend"],
+    "isPublished": true
+}
+
+###
+get http://localhost:3000/course/1
+
+###
+DELETE http://localhost:3000/course/1
+```
+
+### 
+get http://localhost:3000/course/page/0/size/20
