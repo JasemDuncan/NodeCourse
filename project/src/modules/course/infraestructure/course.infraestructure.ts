@@ -1,3 +1,6 @@
+import {Course} from '../domain/course';
+import {CourseProperties} from '../domain/course';
+
 import { CourseMemory } from './course.memory';
 export class CourseInfraestructure {
     courseMemory = new CourseMemory();

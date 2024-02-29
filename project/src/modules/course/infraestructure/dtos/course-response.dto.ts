@@ -1,4 +1,5 @@
 import { plainToInstance } from "class-transformer";
+import { Course } from "../../domain/course";
 
 export class CourseResponse {
     courseId: string;
@@ -9,7 +10,7 @@ export class CourseResponse {
 export class CourseResponseDto {
     static fromDomainToResponse(
         entity: Course | Course[]
-    ):CourseResponse | CourseReponse[]{
+    ):CourseResponse | CourseResponse[]{
         if ( Array.isArray(entity)){
             return entity.map((item) => this.fromDomainToResponse(item) ) as CourseResponse[];
         }

@@ -1,7 +1,9 @@
 import { CourseEntity } from "./entities/course.entity";
 
 export class CourseMemory {
-private courses: CourseEntity[] = [];
+
+    private courses: CourseEntity[] = [];
+    
 
     async createCourse(course: any) {
         this.courses.push(course);

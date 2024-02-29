@@ -31,4 +31,7 @@ const courseUpdate = new CourseUpdate(courseRepository);
 const courseDelete = new CourseDelete(courseRepository);
 
 const controller = new CourseRoutes(courseSave, courseGetAll, courseGetById, courseGetByPage, courseUpdate, courseDelete);
+
 const routes = new CourseRoutes(controller);
+
+export default routes.router;
