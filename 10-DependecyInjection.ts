@@ -1,12 +1,13 @@
-class userActivity {
-
+class UserActivity {
+    tasks: Array<string> = ["task1","Taks 2","Task3"]
 }
 
 class UserSalary {
     amountBytask: number = 100;
+    userActivity: UserActivity; //Composicion visible ya que la instancia pasa como argumento
 
-    constructor(userActivity: userActivity) {
-        this.userActivity = userActivity;
+    constructor(userActivity: UserActivity) {
+        this.userActivity = userActivity; //Inyeccion de Dependencia o Dependencia Visible o Composicion Visible
     }
 
     getInformation() {
@@ -19,7 +20,7 @@ class UserSalary {
     }
 }
 
-const userActivity = new userActivity();
+const userActivity = new UserActivity();
 const userSalary = new UserSalary(userActivity);
 
-console.log(UserSalary.getInformation());
+console.log(userSalary.getInformation());

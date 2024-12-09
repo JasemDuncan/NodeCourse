@@ -8,5 +8,6 @@ function showFirstName() {
 
 console.log(showFirstName());
 
-console.log("lastName: ", lastName);//esto es incorrecto no se puede llamar a una variable que esta dentro de una funcion
+// console.log("lastName: ", lastName);//esto es incorrecto no se puede llamar a una variable que esta dentro de una funcion
 console.log("firstName: ", firstName);//esto es correcto porque la variable firstName esta fuera de la funcion
+console.log(showFirstName());

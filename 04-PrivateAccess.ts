@@ -1,7 +1,8 @@
 class User {
-    name: string
-    email: string
-    private password: string
+    readonly id: string;
+    name: string;
+    email: string;
+    private password: string;
 
     constructor() {
         this.name = "crios";
@@ -12,10 +13,11 @@ class User {
     changeRandomPassword() {
         const newPassword = this.password + (Math.random()*100 + 1).toString;
         this.password = newPassword;
+    }
 }
 
-const user = new User();
-
-console.log("user: ", user);
-console.log("name: ", user.name);
-console.log("email: ", user.email);
+const user = new User()
+console.log(`name: ${user.name}`)
+user.id="asdas"
+// console.log("email: ", user.email)
+// console.log("email: ", user.changeRandomPassword)
