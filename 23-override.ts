@@ -1,25 +1,25 @@
 class Upload {
     save(file: File){
-        const sizeIsValid = this.validationSize(file)
+        const sizeIsValid = file.size < 10000
 
         if(!sizeIsValid){
-            console.log("archivo valid")
-        }else {
-            console.log("archive invalid")
+            console.log("Archive valid")
+        } else {
+            console.log("Archive invalid")
         }
     }
 
-    validationSize(file: File){
-        return file.size < 100000
-    }
+    /*validationSize(file: File){
+        return file.size < 10000
+    }*/
 }
 
 class UploadFile extends Upload {
-    override validationSize(file: File){
+    override validationSize(file: File){ // USAMOS la palabra override asi sabremos si el metodo aun existe.
         return file.size < 1
     }
 }
 
 const upload = new UploadFile()
-const file = new File(["data"], "report.pdf", {type: "application/pdf"})
+const file = new File(["data"],"report.pdf",{type: "application/pdf"})
 upload.save(file)

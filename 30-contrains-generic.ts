@@ -1,13 +1,18 @@
-class DataStorage<T> {
+// GenericTransformStream
+// GENERIC CONSTRAINTS
+// Hacer generica una clase
+
+class DataStorage<T extends string | number | boolean> { // Se peude espeficar unicamente de donde extenderia / heredaria
     private data: Array<T> = []
 
-    addItem(item: T) {
+    addItem(item: T){
         this.data.push(item)
     }
 
-    removeItem(item: T) {
-        if(this.data.indexOf(item)===1) return;
-        this.data.splice(this.data.indexOf(item),1)
+    removeItem(item: T){
+        if(this.data.indexOf(item)===-1) return;
+
+        this.data.splice(this.data.indexOf(item) , 1)
     }
 
     getItems() {
@@ -16,25 +21,30 @@ class DataStorage<T> {
 }
 
 const storageText = new DataStorage<string>()
-storageText.addItem("joe")
-storageText.addItem("mike")
-storageText.addItem("john")
-storageText.removeItem("mike")
+storageText.addItem("Joe")
+storageText.addItem("Nike")
+storageText.addItem("Jasem")
+storageText.removeItem("Nike")
+
 console.log(storageText.getItems())
 
 
 const storageNumber = new DataStorage<number>()
-storageNumber.addItem(22)
-storageNumber.addItem(33)
-storageNumber.addItem(22)
-storageNumber.removeItem(33)
+storageNumber.addItem(10)
+storageNumber.addItem(2)
+storageNumber.addItem(5)
+storageNumber.removeItem(2)
+
 console.log(storageNumber.getItems())
 
 const storageBoolean = new DataStorage<boolean>()
 storageBoolean.addItem(true)
 storageBoolean.addItem(false)
-storageBoolean.addItem(true)
-storageBoolean.removeItem(false)
+storageBoolean.addItem(false)
+storageBoolean.removeItem(true)
+
 console.log(storageBoolean.getItems())
 
 
+//se pone el extent en el generico para qualityLimitationResolutionChanges
+//const storageObject = new DataStorage<object>()

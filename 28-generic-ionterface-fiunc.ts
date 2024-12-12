@@ -1,9 +1,0 @@
-interface Lengthy {
-    length: number
-}
-
-function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
-    return [element, `Total: ${element.length}`]
-}
-
-console.log(countAndDescribe(['football','voley',20, true]))
